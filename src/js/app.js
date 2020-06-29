@@ -5,7 +5,6 @@ App = {
   loading: false,
 
   init: function () {
-    window.ethereum.enable();
     return App.initWeb3();
   },
 
@@ -34,6 +33,7 @@ App = {
         $("#account").text(account);
         web3.eth.getBalance(account, function (err, balance) {
           if (err === null) {
+            window.ethereum.enable();
             $("#accountBalance").text(web3.fromWei(balance, "ether") + " ETH");
           }
         });
