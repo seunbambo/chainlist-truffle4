@@ -5,6 +5,7 @@ App = {
   loading: false,
 
   init: function () {
+    window.ethereum.enable();
     return App.initWeb3();
   },
 
