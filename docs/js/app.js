@@ -27,9 +27,9 @@ App = {
   },
 
   displayAccountInfo: function () {
+    window.ethereum.enable();
     web3.eth.getCoinbase(function (err, account) {
       if (err === null) {
-        window.ethereum.enable();
         App.account = account;
         $("#account").text(account);
         web3.eth.getBalance(account, function (err, balance) {
